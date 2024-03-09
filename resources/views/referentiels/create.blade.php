@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normalleading-tight flex items-center justify-start">
-                    {{ __('Création du référentiel') }}
+                    {{ __('Création tâche') }}
                 </h2>
             </div>
         </div>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="pt-4">
-                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Libellé</label>
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Nom</label>
                                 <div class="relative mt-1">
                                     <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
                                     @error('libelle')
@@ -37,6 +37,74 @@
                                     <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
                                 </div>
                             </div>
+                            {{-- ================================================================= --}}
+                            <div class="pt-4">
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Date debut</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('libelle')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Date fin</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('libelle')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            {{-- ================================================================= --}}
+                        </fieldset>
+
+                        {{-- ************************************************************** --}}
+                        <fieldset>
+                            <div class="pt-4">
+                                <label for="code" class="block text-sm font-medium leading-6 text-gray-900">Statut</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="code" id="code" value="{{ old('code') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('code')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Rien</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('libelle')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            {{-- ================================================================= --}}
+                            <div class="pt-4">
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Rien</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('libelle')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            <div class="pt-4">
+                                <label for="libelle" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+                                <div class="relative mt-1">
+                                    <input type="text" name="libelle" id="libelle" value="{{ old('libelle') }}" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
+                                    @error('libelle')
+                                    <div class="text-red-500 text-sm">{{$message}}</div>
+                                    @enderror
+                                    <div class="absolute inset-x-0 bottom-0 border-t border-ventis_color peer-focus:border-t-2 peer-focus:border-color_att" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                            {{-- ================================================================= --}}
                         </fieldset>
                     </div>
 {{--                    butons de navigation--}}

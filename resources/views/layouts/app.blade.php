@@ -11,7 +11,7 @@
 {{--        app title--}}
         <title>{{ config('app.name', 'Laravel') }}</title>
 {{--        favicon--}}
-        <link rel="shortcut icon" href="{{asset('logos/favicon.png')}}"/>
+        <link rel="shortcut icon" href="{{ asset('assets/logos/favicon.png') }}"/>
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}"/>
@@ -44,7 +44,7 @@
         <script src="{{asset('assets/js/apexcharts-main.js')}}"></script>
 
         <script src="{{asset('assets/js/custom.js')}}"></script>
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-{{--        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
     </body>
 </html>

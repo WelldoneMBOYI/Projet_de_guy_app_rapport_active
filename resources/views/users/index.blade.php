@@ -80,35 +80,35 @@
                             <tbody class="bg-gray-50 divide-y divide-color_rem">
                             @forelse ($users as $user)
                                 <tr class="hover:bg-color_rej">
-                                    <td class="px-2 py-2 text-sm font-normalwhitespace-nowrap">
+                                    <td class="px-2 py-2 text-sm font-normal whitespace-nowrap">
                                         <div>
                                             <p class="text-sm text-gray-600">
                                                 {{$loop->iteration }}
                                             </p>
                                         </div>
                                     </td>
-                                    <td class="px-3 py-2 text-sm font-normalwhitespace-nowrap">
+                                    <td class="px-3 py-2 text-sm font-normal whitespace-nowrap">
                                         <div>
                                             <p class="text-sm text-gray-600">
                                                 {{ $user?->name }}
                                             </p>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                    <td class="px-4 py-2 text-sm font-normal whitespace-nowrap">
                                         <div>
                                             <p class="text-sm text-gray-600">
                                                 Profil en cours..
                                             </p>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                    <td class="px-4 py-2 text-sm font-normal whitespace-nowrap">
                                         <div>
                                             <p class="text-sm text-gray-600">
                                                 {{ $user->email }}
                                             </p>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                    <td class="px-4 py-2 text-sm font-normal whitespace-nowrap">
                                         <div>
                                             <p class="text-sm text-gray-600">
                                                 Etat ici..

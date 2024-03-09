@@ -42,7 +42,6 @@
                                 <label for="parent_id" class="block text-sm font-medium leading-6 text-gray-900">Parent</label>
                                 <div class="relative mt-1">
                                     <select name="parent_id" class="peer block w-full border-0 bg-gray-50 py-0.5 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6">
-{{--                                        <option disabled selected>Choisir ici..</option>--}}
                                         @forelse  ($leparent as $v)
                                             <option value=" {{ $v->id }} "> {{ $v?->libelle }}</option>
                                         @empty

@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\CentreController;
+use App\Http\Controllers\CoordinationController;
 use App\Http\Controllers\DetailReferentielController;
-use App\Http\Controllers\ElectionController;
+use App\Http\Controllers\IntervenantController;
 use App\Http\Controllers\ReferentielController;
+use App\Http\Controllers\TypeExamController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -13,18 +15,24 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| C'est ici que vous pouvez enregistrer des routes Web pour votre application. Ces
+| routes sont chargées à partir de RouteServiceProvider au sein d'un groupe qui
+| contient le groupe middleware "web". Maintenant, créez quelque chose de géniale!
 |
 */
 
 Route::get('/', function () {
-    return view('portail');
+    return view('auth.login');
 });
 
-Route::view('login', 'auth.login')->name('login');
-Route::view('portail', 'portail')->name('portail');
+// Juste pour resoudre l'erreur de chargement des fichiers de sessions
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "Cleared!";
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -55,7 +63,19 @@ Route::middleware('auth')->group(function () {
             Route::get('/creation/{referentiel}', [DetailReferentielController::class,'createDetailReferentiel'])->name('sousRef.create');
         });
 
-    Route::resource('election', ElectionController::class);
+    Route::resource('examen', TypeExamController::class);
+    Route::resource('centre', CentreController::class);
+    Route::resource('intervenant', IntervenantController::class);
+
+
+    Route::get('/decision_admin', [CoordinationController::class, 'decision_admin'])->name('decision_admin.index');
+    Route::get('/decision_tech', [CoordinationController::class, 'decision_tech'])->name('decision_tech.index');
+    Route::get('/decision_acad', [CoordinationController::class, 'decision_acad'])->name('decision_acad.index');
+
+
+    Route::get('/decision_admin/done', [CoordinationController::class, 'decision_admin_done'])->name('decision_admin.done');
+    Route::get('/decision_tech/done', [CoordinationController::class, 'decision_tech_done'])->name('decision_tech.done');
+    Route::get('/decision_acad/done', [CoordinationController::class, 'decision_acad_done'])->name('decision_acad.done');
 });
 
 require __DIR__.'/auth.php';

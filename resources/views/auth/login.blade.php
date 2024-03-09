@@ -2,8 +2,8 @@
     <div class="relative isolate flex flex-col gap-2 lg:flex-row">
         <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
-                <a href="{{ route('portail') }}" class="flex justify-start items-center pb-4">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
+                <a href="javascript:void(0);" class="flex justify-start items-center pb-4">
+                    {{-- <x-application-logo /> --}}
                 </a>
                 <h1 class="mb-4 text-xl font-semibold text-gray-700">Se connecter</h1>
                 <form method="POST" action="{{ route('login') }}">
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-2/4 lg:shrink-0">
-            <img aria-hidden="true" class="absolute inset-0 h-full w-full rounded-2xl object-cover" src="{{ asset('assets/images/happy.jpg') }}" alt="Office"/>
+            <img aria-hidden="true" class="absolute inset-0 h-full w-full rounded-2xl object-cover" src="{{ asset('assets/images/bg.jpg') }}" alt="Office"/>
         </div>
     </div>
 </x-guest-layout>

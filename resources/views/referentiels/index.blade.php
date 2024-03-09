@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normalleading-tight flex items-center justify-start">
-                    {{ __('Tableau de bord référentiel') }}
+                    {{ __('Tableau de bord <TACHES>') }}
                 </h2>
             </div>
         </div>
@@ -21,7 +21,7 @@
                                     <svg class="w-5 h-5 text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                                 </div>
                                 <form>
-                                    <input type="text" id="search" name="search" value="{{ request('search') }}" class="block p-1.5 pl-10 w-80 text-sm text-color_rem bg-gray-50 rounded-lg border border-gray-300 focus:ring-color_att focus:border-ventis_color" placeholder="Rechercher par code/libellé">
+                                    <input type="text" id="search" name="search" value="{{ request('search') }}" class="block p-1.5 pl-10 w-80 text-sm text-color_rem bg-gray-50 rounded-lg border border-gray-300 focus:ring-color_att focus:border-ventis_color" placeholder="Rechercher par code/nom">
                                 </form>
                             </div>
                         </div>
@@ -38,23 +38,32 @@
                     <div class="inline-block min-w-full h-screen -mt-6 align-middle md:px-6 lg:px-4">
                         <div class="border border-gray-200 md:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-color_att text-white">
-                                <tr class="border-gray-400 border-b">
-                                    <th scope="col" class="py-2 px-2 text-sm text-left rtl:text-right text-white">
-                                        #
-                                    </th>
-                                    <th scope="col" class="py-2 px-3 text-sm text-left rtl:text-right text-white">
-                                        CODE
-                                    </th>
-                                    <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
-                                        LIBELLE
-                                    </th>
-                                    <th scope="col" class="py-2 px-3 text-sm text-left rtl:text-right text-white">
-
-                                    </th>
-                                </tr>
+                                <thead class="bg-sfe_color text-white">
+                                    <tr class="even:bg-gray-50 border-gray-400 border-b">
+                                        <th scope="col" class="py-2 px-2 text-sm text-left rtl:text-right text-white">
+                                            #
+                                        </th>
+                                        <th scope="col" class="py-2 px-3 text-sm text-left rtl:text-right text-white">
+                                            CODE
+                                        </th>
+                                        <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
+                                            NOM
+                                        </th>
+                                        <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
+                                            DATE DEBUT
+                                        </th>
+                                        <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
+                                            DATE FIN
+                                        </th>
+                                        <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
+                                            STATUT
+                                        </th>
+                                        <th scope="col" class="py-2 px-3 text-sm text-center rtl:text-right text-white">
+                                            ACTIONS
+                                        </th>
+                                    </tr>
                                 </thead>
-                                <tbody class="bg-gray-50 divide-y divide-color_rem">
+                                <tbody class="divide-y divide-mycolor3">
                                 @forelse ($datas as $data)
                                     <tr class="hover:bg-color_rej">
                                         <td class="px-2 py-2 text-sm font-normalwhitespace-nowrap">
@@ -78,13 +87,37 @@
                                                 </p>
                                             </div>
                                         </td>
+                                        {{-- ================================================== --}}
+                                        <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                            <div>
+                                                <p class="text-sm text-gray-600">
+                                                    {{ $data?->libelle }}
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                            <div>
+                                                <p class="text-sm text-gray-600">
+                                                    {{ $data?->created_at }}
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
+                                            <div>
+                                                <p class="text-sm text-gray-600">
+                                                    {{-- {{ $data?->updated_at }} --}}
+                                                    En cours
+                                                </p>
+                                            </div>
+                                        </td>
+                                        {{-- ================================================== --}}
                                         <td class="px-3 py-2 text-sm whitespace-nowrap flex items-center justify-start">
                                             <a href="{{route('sousRef.index', $data?->id)}}" class="bg-color_rej hover:bg-white rounded-full font-light hover:underline">
                                                 <button class="flex items-center gap-1 py-1 px-2 text-black/40 hover:text-black dark:text-white/40 dark:hover:text-white transition-all duration-300">
                                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                                                     </svg>
-                                                    <p>Gérer</p>
+                                                    <p><span>Sous tâches</span></p>
                                                 </button>
                                             </a>
                                             <a href="{{route('referentiels.edit', $data?->id)}}" class="font-light hover:underline" title="Modifier">

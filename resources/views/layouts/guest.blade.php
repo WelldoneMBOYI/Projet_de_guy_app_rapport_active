@@ -10,10 +10,9 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-{{--        <div class="flex justify-center items-center h-screen bg-gray-200 px-6">--}}
+    <body class="bg-cover bg-no-repeat" style="background-image: url('{{ asset('assets/images/bg.jpg') }}');">
+{{--        <div class="flex items-center min-h-screen p-6 bg-gray-50" style="background:#fff url({{asset('assets/images/bg.jpg')}}); height: 100vh;">--}}
         <div class="flex items-center min-h-screen p-6 bg-gray-50">
-{{--            <div class="p-6 max-w-sm w-full bg-white shadow-md rounded-md">--}}
             <div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl">
                 {{ $slot }}
             </div>

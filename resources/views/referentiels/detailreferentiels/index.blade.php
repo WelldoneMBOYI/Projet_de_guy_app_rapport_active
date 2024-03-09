@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normalleading-tight flex items-center justify-start">
-                    {{ __('Tableau de bord détails du référentiel') }} ({{$laligne?->libelle}})
+                    {{ __('Tableau de bord <DETAIL DU REFERENTIEL>') }} ({{$laligne?->libelle}})
                 </h2>
             </div>
         </div>
@@ -47,7 +47,7 @@
                     <div class="inline-block min-w-full h-screen -mt-6 align-middle md:px-6 lg:px-4">
                         <div class="border border-gray-200 md:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-color_att text-white">
+                                <thead class="bg-sfe_color text-white">
                                 <tr class="border-gray-400 border-b">
                                     <th scope="col" class="py-2 px-2 text-sm text-left rtl:text-right text-white">
                                         #

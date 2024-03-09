@@ -23,6 +23,7 @@ class ReferentielController extends Controller
             })
             ->orderby('code', 'asc')
             ->get();
+            // dd($datas);
         return view('referentiels.index', compact('datas'));
     }
     /**

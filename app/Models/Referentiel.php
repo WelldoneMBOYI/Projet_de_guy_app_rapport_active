@@ -12,7 +12,7 @@ class Referentiel extends Model
 
     use HasFactory;
 
-    public function details_referentiel(): HasMany
+    public function lesDetailsReferentiels(): HasMany
     {
         return $this->hasMany(DetailReferentiel::class, 'referentiel_id', 'id');
     }

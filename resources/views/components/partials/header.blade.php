@@ -1,4 +1,4 @@
-<div class="bg-gray-50 rounded-full border-b-2 border-indigo-600 dark:border-white/10 py-[22px] px-7 flex items-center justify-between">
+<div class="bg-gray-100 border-b-2 border-color_att dark:border-white/10 py-[22px] px-7 flex items-center justify-between">
     <div class="flex items-center gap-2">
         <button type="button" class="text-black dark:text-white" @click="$store.app.toggleSidebar()">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -11,7 +11,7 @@
                     <li class="flex items-center">
                         {{ __('Connectés en tant que') }}
                     </li>
-                    <span class="text-blue-700 font-bold">{{Auth::user()->name}}</span>
+                    <span class="text-sfe_color font-bold">{{Auth::user()->name}}</span>
                 </ol>
             </nav>
         </div>

@@ -3,7 +3,7 @@
         <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
                 <a href="javascript:void(0);" class="flex justify-start items-center pb-4">
-                    {{-- <x-application-logo /> --}}
+                    <x-application-logo />
                 </a>
                 <h1 class="mb-4 text-xl font-semibold text-gray-700">Se connecter</h1>
                 <form method="POST" action="{{ route('login') }}">

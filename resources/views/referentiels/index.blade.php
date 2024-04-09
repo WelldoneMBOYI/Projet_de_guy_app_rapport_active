@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normalleading-tight flex items-center justify-start">
-                    {{ __('Tableau de bord <TACHES>') }}
+                    {{ __('Tableau de bord <PROJETS>') }}
                 </h2>
             </div>
         </div>
@@ -47,7 +47,7 @@
                                             CODE
                                         </th>
                                         <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
-                                            NOM
+                                            LIBELLE
                                         </th>
                                         <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
                                             DATE DEBUT
@@ -91,14 +91,14 @@
                                         <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
                                             <div>
                                                 <p class="text-sm text-gray-600">
-                                                    {{ $data?->libelle }}
+                                                    {{ $data?->created_at }}
                                                 </p>
                                             </div>
                                         </td>
                                         <td class="px-4 py-2 text-sm font-normalwhitespace-nowrap">
                                             <div>
                                                 <p class="text-sm text-gray-600">
-                                                    {{ $data?->created_at }}
+                                                    {{ $data?->updated_at }}
                                                 </p>
                                             </div>
                                         </td>
@@ -117,10 +117,10 @@
                                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                                                     </svg>
-                                                    <p><span>Sous tâches</span></p>
+                                                    <p><span>Tâches</span></p>
                                                 </button>
-                                            </a>
-                                            <a href="{{route('referentiels.edit', $data?->id)}}" class="font-light hover:underline" title="Modifier">
+                                            
+                                                <a href="{{route('referentiels.edit', $data?->id)}}" class="font-light hover:underline" title="Modifier">
                                                 <button class="flex items-center gap-1 py-1 px-2 text-black/40 hover:text-black dark:text-white/40 dark:hover:text-white transition-all duration-300">
                                                     <svg class="w-4 h-4 text-ventis_color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />

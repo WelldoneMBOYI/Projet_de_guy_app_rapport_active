@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normalleading-tight flex items-center justify-start">
-                    {{ __('Tableau de bord <DETAIL DU REFERENTIEL>') }} ({{$laligne?->libelle}})
+                    {{ __('Tableau de bord <GESTION DES TACHES>') }} ({{$laligne?->libelle}})
                 </h2>
             </div>
         </div>

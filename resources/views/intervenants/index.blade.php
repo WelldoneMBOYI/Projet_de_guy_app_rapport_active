@@ -4,7 +4,7 @@
         <div class="p-2 bg-white rounded-tl-lg rounded-tr-lg">
             <div class="flex items-center justify-between">
                 <h2 class="p-1 text-lg md:text-lg text-black font-normal leading-tight flex items-center justify-start">
-                    {{ __('Tableau de bord <INTERVENANT>') }}
+                    {{ __('Tableau de bord <Gestion des Agents>') }}
                 </h2>
             </div>
         </div>
@@ -56,6 +56,9 @@
                                         PROVENANCE
                                     </th>
                                     <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
+                                        HIERARCHIE
+                                    </th>
+                                    <th scope="col" class="py-2 px-4 text-sm text-left rtl:text-right text-white">
                                         STATUT
                                     </th>
                                     <th scope="col" class="py-2 px-3 text-sm text-left rtl:text-right text-white">
@@ -98,6 +101,13 @@
                                             <div>
                                                 <p class="text-sm text-gray-600">
                                                     {{ $data?->provenance }}
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-2 text-sm font-normal whitespace-nowrap">
+                                            <div>
+                                                <p class="text-sm text-gray-600">A2
+                                                    {{-- {{ $data?->provenance }} --}}
                                                 </p>
                                             </div>
                                         </td>
